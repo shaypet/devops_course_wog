@@ -1,6 +1,6 @@
 from games import memory_game, currency_roulette_game, guess_game
-
-
+from score import add_score
+from utils import calculate_points
 # READ ME
 # this version of app.py (with 'games'- list of dictionaries) was ready to send at the last submission.
 # I didn't send it because I wasn't sure how part 2 requirements will fit to it.
@@ -43,4 +43,6 @@ def start_play():
             break
     difficulty_level = int(difficulty_level)
 
-    games[game_chosen - 1]["play"](difficulty_level)
+    result = games[game_chosen - 1]["play"](difficulty_level)
+    if result:
+        add_score(calculate_points(difficulty_level))

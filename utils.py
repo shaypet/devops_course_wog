@@ -32,3 +32,6 @@ def get_score():
     except:
         return None
     return None
+
+def calculate_points(difficulty_level):
+    return difficulty_level*3 + 5
