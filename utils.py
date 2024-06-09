@@ -6,7 +6,7 @@ from os import system, name
 
 
 # define our clear function
-def clear():
+def Screen_cleaner():
     # for windows
     if name == 'nt':
         _ = system('cls')

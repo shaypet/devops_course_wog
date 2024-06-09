@@ -1,6 +1,6 @@
 import random
 from time import sleep
-from utils import clear
+from utils import Screen_cleaner
 
 # READ ME!!
 # in this game I could have just build a string with .join() from the auto generated sequence list and match it to the
@@ -65,7 +65,7 @@ def play(difficulty_level):
     print("Random numbers have been selected.")
     print(*sequence, sep=", ")  # print a list without [] and with ', ' as seperator
     sleep(DELAY_TO_CLEAR)
-    clear()
+    Screen_cleaner()
     user_sequence = get_list_from_user(difficulty_level)
     if is_list_equal(sequence, user_sequence):
         print(f"Your memory is very good, the sequences are {method_str}")
