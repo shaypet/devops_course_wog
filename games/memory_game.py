@@ -2,11 +2,6 @@ import random
 from time import sleep
 from utils import Screen_cleaner
 
-# READ ME!!
-# in this game I could have just build a string with .join() from the auto generated sequence list and match it to the
-# user input string, but I wanted it to be more challenging, dynamic (for ex. the identical and equal option) and with
-# input checking. I hope it's not "OVERTHINKING" or "OVERDOING" (if overdoing is a thing).
-
 
 # Constants for sequence values
 MIN_NUMBER_FOR_ITEM = 1
