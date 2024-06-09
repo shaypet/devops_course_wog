@@ -1,6 +1,6 @@
-from utils import get_score,DATA_FILES_DIR,SCORES_FILE_NAME
+from utils import get_score,SCORES_FILE_NAME
 def add_score(score):
-   file_path = f'{DATA_FILES_DIR}/{SCORES_FILE_NAME}'
+   file_path = f'{SCORES_FILE_NAME}'
    current_score = get_score()
 
    file = open(file_path, "w")

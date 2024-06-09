@@ -17,12 +17,11 @@ def Screen_cleaner():
 
 
 
-DATA_FILES_DIR = "saved_data_files"
 SCORES_FILE_NAME = "Scores.txt"
 BAD_RETURN_CODE = 403
 
 def get_score():
-    file_path = f'{DATA_FILES_DIR}/{SCORES_FILE_NAME}'
+    file_path = f'{SCORES_FILE_NAME}'
     try:
         file = open(file_path, "r")
         current_score = file.readline()
