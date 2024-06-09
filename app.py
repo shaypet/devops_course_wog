@@ -7,7 +7,7 @@ from time import sleep
 # I didn't send it because I wasn't sure how part 2 requirements will fit to it.
 # it's more dynamic, you can easily switch the games order and add games to the project.
 
-DELAY_TO_CLEAR_PREVIOS_GAME = 2
+DELAY_TO_CLEAR_PREVIOS_GAME = 3
 
 def welcome():
     username = input("type in your username:")

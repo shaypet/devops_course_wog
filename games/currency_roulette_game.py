@@ -6,13 +6,19 @@ CURRENCY_TO_EXCHANGE = 'ILS'
 
 
 def get_exchange_rate():
-    client = freecurrencyapi.Client(FREE_CURRENCY_API_KEY)
-    response = client.latest(currencies=[CURRENCY_TO_EXCHANGE])
+    try:
+        client = freecurrencyapi.Client(FREE_CURRENCY_API_KEY)
+        response = client.latest(currencies=[CURRENCY_TO_EXCHANGE])
+    except:
+        print("we are very sorry. seems like there was a problem getting the exchange rate.")
+        return None
     return response["data"][CURRENCY_TO_EXCHANGE]
 
 
 def get_money_interval(difficulty_level, amount_to_exchange):
     rate = get_exchange_rate()
+    if rate is None:
+        return None
     interval = 10 - difficulty_level
     amount_exchanged_value = rate*amount_to_exchange
     return {
@@ -37,12 +43,9 @@ def compare_results(interval, user_guess):
 
 def play(difficulty_level):
     amount_to_exchange = random.randint(1, 100)
-    try:
-        # get_money_interval function use get_exchange_rate that use the api.
-        # without internet connection it would fail. so we try.
-        interval = get_money_interval(difficulty_level, amount_to_exchange)
-    except:
-        print("we are very sorry. seems like there was a problem getting the exchange rate.")
+    
+    interval = get_money_interval(difficulty_level, amount_to_exchange)
+    if interval is None:
         return None
 
     user_guess = get_guess_from_user(amount_to_exchange)
