@@ -14,3 +14,8 @@ def clear():
     # for mac and linux(here, os.name is 'posix')
     else:
         _ = system('clear')
+
+
+
+SCORES_FILE_NAME = "Scores.txt"
+BAD_RETURN_CODE = 403
