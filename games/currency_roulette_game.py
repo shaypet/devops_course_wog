@@ -1,18 +1,15 @@
 import random
-import freecurrencyapi
-
-FREE_CURRENCY_API_KEY = 'fca_live_Q50KqRg85aZyrrlqy50n1Jf39FEjNkSqqs4ftc3c'  # bad practice.
-CURRENCY_TO_EXCHANGE = 'ILS'
+from currency_converter import CurrencyConverter
 
 
 def get_exchange_rate():
     try:
-        client = freecurrencyapi.Client(FREE_CURRENCY_API_KEY)
-        response = client.latest(currencies=[CURRENCY_TO_EXCHANGE])
+        client = CurrencyConverter()
+        response = client.convert(1, 'USD', 'ILS')
     except:
         print("we are very sorry. seems like there was a problem getting the exchange rate.")
         return None
-    return response["data"][CURRENCY_TO_EXCHANGE]
+    return response
 
 
 def get_money_interval(difficulty_level, amount_to_exchange):
@@ -55,6 +52,6 @@ def play(difficulty_level):
     else:
         print("You were wrong :(")
 
-    print(f"\nthe guess range was {interval["min"]} to {interval["max"]}")
+    print(f'\nthe guess range was {interval["min"]} to {interval["max"]}')
 
     return result
