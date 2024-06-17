@@ -3,12 +3,8 @@ from currency_converter import CurrencyConverter
 
 
 def get_exchange_rate():
-    try:
-        client = CurrencyConverter()
-        response = client.convert(1, 'USD', 'ILS')
-    except:
-        print("we are very sorry. seems like there was a problem getting the exchange rate.")
-        return None
+    client = CurrencyConverter()
+    response = client.convert(1, 'USD', 'ILS')
     return response
 
 
