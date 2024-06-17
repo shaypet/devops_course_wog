@@ -34,7 +34,7 @@ def start_play():
         while True:
             print("Please choose a game to play:")
             for index, game in enumerate(games):
-                print(f"\t{index+1}. {game["menu_text"]}")
+                print(f'\t{index+1}. {game["menu_text"]}')
             print(f"\t0. exit")
             game_chosen = input()
 
