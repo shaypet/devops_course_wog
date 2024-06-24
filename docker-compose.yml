@@ -1,5 +1,6 @@
 services:
-  main-score:
+  wog-main-score:
     build: .
+    image: shaypet/wog_main_score
     ports:
       - 8777:3001
