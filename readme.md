@@ -62,7 +62,9 @@ To start playing you need:
 - Good Mood!
 
 **Testing**
+
 For testing the current score page, use this command:
+
 `py tests/e2e.py 3001`
 
 ### Enjoy!
