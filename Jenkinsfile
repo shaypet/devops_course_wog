@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Finalize') {
             steps {
-               echo 'push'
+               bat 'docker compose push'
             }
         }
     }
