@@ -19,6 +19,7 @@ def Screen_cleaner():
 
 SCORES_FILE_NAME = "Scores.txt"
 BAD_RETURN_CODE = 403
+FLASK_PORT = 3001
 
 def get_score():
     file_path = f'{SCORES_FILE_NAME}'

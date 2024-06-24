@@ -1,5 +1,5 @@
 from flask import Flask,render_template
-from utils import get_score,BAD_RETURN_CODE
+from utils import get_score,BAD_RETURN_CODE,FLASK_PORT
 def score_server():
     current_score = get_score()
     if current_score is not None:
@@ -10,12 +10,10 @@ def score_server():
 
 app = Flask(__name__,template_folder='templates')
 @app.route("/")
-def score_server():
+def get_score_server():
     return score_server()
 
-
-
 if __name__ == '__main__':
-    app.run()
+    app.run(port=FLASK_PORT)
 
 
