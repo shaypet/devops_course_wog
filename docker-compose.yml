@@ -1,0 +1,5 @@
+services:
+  main-score:
+    build: .
+    ports:
+      - 8777:3001
