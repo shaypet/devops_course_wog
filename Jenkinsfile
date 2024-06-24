@@ -25,8 +25,13 @@ pipeline {
         }
         stage('Finalize') {
             steps {
-                bat 'docker compose down'
+               echo 'push'
             }
+        }
+    }
+    post{
+        always{
+            bat 'docker compose down'
         }
     }
 }
