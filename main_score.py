@@ -14,6 +14,6 @@ def get_score_server():
     return score_server()
 
 if __name__ == '__main__':
-    app.run(port=FLASK_PORT)
+    app.run(host='0.0.0.0',port=FLASK_PORT)
 
 

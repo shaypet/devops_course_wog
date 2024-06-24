@@ -1,13 +1,17 @@
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from utils import FLASK_PORT
+
 #from selenium.webdriver.chrome.options import Options
 
 
 def test_scores_service():
+    test_port=3001
+    if len(sys.argv)>1 and sys.argv[1].isdecimal():
+        test_port=int(sys.argv[1])
+
     driver = webdriver.Chrome()
-    driver.get(f'http://localhost:{FLASK_PORT}')
+    driver.get(f'http://localhost:{test_port}')
 
     error_check = driver.find_element(by=By.XPATH, value="/html/body/h1")
     if error_check.text == "ERROR:":
