@@ -47,6 +47,7 @@ Recall and input a sequence of displayed random numbers.
 ---
 
 **Installation Guide**
+
 To start playing you need:
 
 - python installed (tested on v3.12)
